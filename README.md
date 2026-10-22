@@ -5,7 +5,7 @@
 
 | Skill | What it does |
 | --- | --- |
-| [catch-me-up](skills/catch-me-up/) | Catches you up in a skimmable format: an emoji checklist and a numbered "Need from you" list first, then the details. Add "on everything" to cover every session and project |
+| [catch-me-up](skills/catch-me-up/) | Catches you up in a skimmable format: an emoji checklist and a numbered "Need from you" list first, then the details. Modes: `now` (short), `waiting`, `since <time>` and `on everything` |
 
 ## Install a skill
 

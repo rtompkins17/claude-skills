@@ -10,8 +10,9 @@ me up" or "what's the status?". You get a format you can read at a glance:
   one needs, the list of what is still to build, and anything to copy and
   paste, in code blocks.
 
-It covers the current session by default. Add "on everything" and it covers
-every session, project and repository Claude can reach.
+It covers the current session by default. Words after the command change
+what you get (see Use below), such as `now` for the short version or `on
+everything` for every session and project.
 
 It is useful when you run several agent sessions, branches or projects at once
 and need to see what needs you without reading paragraphs.
@@ -61,14 +62,20 @@ Menu names change from time to time. If these don't match, see
 
 ## Use
 
-In Claude Code:
+In Claude Code, type `/catch-me-up`, optionally followed by one of these:
 
-- `/catch-me-up` covers the current session.
-- `/catch-me-up on everything` covers every session and project. "All" and
-  "overall" work too.
+| Add | You get |
+| --- | --- |
+| nothing | The full update for this session: checklist, asks, then specifics |
+| `now` (or `quick`, `short`, `tldr`) | Just the checklist and one line of asks, with only fast checks |
+| `waiting` | Only what is waiting on you |
+| `since <time>` | Only what changed, for example `since this morning` |
+| `on everything` (or `all`, `overall`) | Every session and project |
 
-Or ask in your own words, in any Claude app: "catch me up", "what's the
-status?", "what's left?", "what do you need from me?" or "catch me up on
+They combine: `/catch-me-up now on everything` gives one line per project.
+
+Or ask in your own words, in any Claude app: "catch me up", "quick status",
+"what's waiting on me?", "what changed since yesterday?" or "catch me up on
 everything". Claude loads the skill when the request matches.
 
 How much "everything" can see depends on where Claude runs. An app that lets

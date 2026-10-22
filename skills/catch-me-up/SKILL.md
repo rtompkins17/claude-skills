@@ -1,6 +1,6 @@
 ---
 name: catch-me-up
-description: "Skimmable status: an emoji checklist and numbered 'Need from you', then specifics. Use for catch me up, status, what's left or next, what's needed. 'On everything' covers all sessions and projects."
+description: "Skimmable status: emoji checklist, then 'Need from you'. Use for catch me up, status, what's left or next, what's waiting on me, what changed. Modes: now, waiting, since, on everything."
 license: MIT
 ---
 
@@ -8,17 +8,28 @@ license: MIT
 
 The reader runs many threads at once and triages by skimming. Give them the
 state in a few seconds, then the detail below a divider for when they want it.
+In every mode, start with the content: no intro sentence, and no closing recap
+or offer.
 
-## Scope: this thread, or everything
+## Modes
 
-- **Default:** the current session or thread.
-- **Everything:** when the request says "everything", "all", "overall" or
-  "every session" (for example `/catch-me-up on everything`), cover every
-  session, project and repository you can reach. See "Everything mode" below.
+Read the words after the command, or in the request itself. With none of these
+words, give the full update for the current session.
+
+| Words | Mode |
+| --- | --- |
+| `now`, `quick`, `short`, `tldr` | **Now:** the checklist and one-line asks only |
+| `waiting` | **Waiting:** only what is waiting on the user |
+| `since <time>` | **Since:** only what changed since then |
+| `on everything`, `all`, `overall` | **Everything:** every session and project |
+
+Modes combine. For example, `now on everything` gives one line per project,
+and `waiting on everything` gives every ask from every thread. Each mode has
+its own section below.
 
 ## Before you write: verify
 
-Report checked state, never memory alone.
+Report checked state, never memory alone. Now mode runs a lighter version.
 
 - Branches: fetch, then list unmerged work against the default branch
   (`git branch -a --no-merged main`, `git log main..<branch> --oneline`).
@@ -28,9 +39,7 @@ Report checked state, never memory alone.
 - If you can't check something, label it "not verified". If you can only see
   your own thread, say so.
 
-## The shape
-
-Start with the bold line: no intro sentence, and no closing recap or offer.
+## The full shape
 
 ```markdown
 **<Thread or topic>**
@@ -105,6 +114,54 @@ After a `---` divider, include whichever of these apply and skip the rest:
   **Need from you** list in priority order (name the thread when it isn't
   obvious), then a single Specifics section.
 
+## Now mode
+
+Fast to make and fast to read.
+
+- Run only quick checks: local branches and status, plus what this session
+  already knows. Skip deploy, CI and pull request lookups. Anything you didn't
+  check can't be ✅.
+- Write the bold line, then the checklist in short `<thing>: <state>` lines,
+  then the asks on one line, a few words each.
+- No divider, no Specifics and no FYI lines. If nothing is waiting on the user,
+  write `**Waiting on you:** nothing`.
+
+```markdown
+**<Thread or topic>**
+
+✅ <thing>: <state>
+🔄 <thing>: <state>
+⛔ <thing>: <what it needs from the user>
+
+**Waiting on you:** 1. <ask> · 2. <ask>
+```
+
+With everything mode, write one line per thread, then the quiet ones:
+
+```markdown
+**<Thread>** ✅ 2 🔄 2 ⛔ 1 · waiting on you: <ask>, <ask>
+**<Thread>** ✅ 3 · nothing needed
+**Quiet:** <thread>, <thread>
+```
+
+## Waiting mode
+
+- Give only the numbered **Need from you** list, most blocking first. Leave out
+  the checklist and the Specifics.
+- Across several threads, start each ask with the thread name in bold.
+- If an ask needs text to paste, put its code block under the list.
+- If nothing is waiting, write `Nothing is waiting on you.`
+
+## Since mode
+
+- Report only what changed after the time given, such as "this morning",
+  "yesterday" or "Friday". If the time is missing or unclear, use the last
+  catch-up in this session, or else the last 24 hours, and say which you used.
+- Check what happened after that time: commits, merges, deploys and session
+  activity.
+- Use the full shape with only the changed items. Put everything else on one
+  line: `Unchanged: <thing>, <thing>`.
+
 ## Everything mode
 
 Gather before you write:
@@ -169,3 +226,17 @@ Check in without a signal: your habits sync when you're back online.
 Fixed a sign-in loop some people hit after updating.
 ```
 ````
+
+The same update in now mode:
+
+```markdown
+**Habit tracker: 1.4 release**
+
+✅ Dark mode: live
+🔄 Offline check-ins: built, needs your phone test
+🔄 Sign-in fix: built, needs your phone test
+⏳ Push reminders: after 1.4
+⛔ Weather widget: needs your key
+
+**Waiting on you:** 1. Phone test both fixes · 2. Add the weather key
+```
