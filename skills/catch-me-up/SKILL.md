@@ -1,6 +1,6 @@
 ---
 name: catch-me-up
-description: "Skimmable status: emoji checklist, then 'Need from you'. Use for catch me up, status, what's left or next, what's waiting on me, what changed. Modes: now, waiting, since, on everything."
+description: "Skimmable status: emoji checklist, then 'Need from you'. Use for catch me up, status, what's left or next, what's waiting on me, what changed. Modes: now, waiting, since, project, on everything."
 license: MIT
 ---
 
@@ -21,11 +21,13 @@ words, give the full update for the current session.
 | `now`, `quick`, `short`, `tldr` | **Now:** the checklist and one-line asks only |
 | `waiting` | **Waiting:** only what is waiting on the user |
 | `since <time>` | **Since:** only what changed since then |
+| `project`, `this project`, `repo` | **Project:** every session and branch in the current project |
 | `on everything`, `all`, `overall` | **Everything:** every session and project |
 
 Modes combine. For example, `now on everything` gives one line per project,
-and `waiting on everything` gives every ask from every thread. Each mode has
-its own section below.
+`waiting project` gives every ask in this project, and `waiting on everything`
+gives every ask from every thread. If a request names both project and
+everything, everything wins. Each mode has its own section below.
 
 ## Before you write: verify
 
@@ -161,6 +163,23 @@ With everything mode, write one line per thread, then the quiet ones:
   activity.
 - Use the full shape with only the changed items. Put everything else on one
   line: `Unchanged: <thing>, <thing>`.
+
+## Project mode
+
+Covers the project this session works in: its repository, or its folder if it
+has none. Other projects stay out.
+
+Gather before you write:
+
+- **Sessions:** if your tools can list or read other sessions, check each one
+  working in this project's folder or in a worktree of the same repository.
+- **Branches:** every branch of this repository, local and remote, against the
+  default branch, whichever session made it.
+- **Notes:** this project's task lists, notes and memory are leads to confirm,
+  not facts.
+- **Gaps:** name what you couldn't see in one line.
+
+Then write it the way everything mode does, limited to this project.
 
 ## Everything mode
 

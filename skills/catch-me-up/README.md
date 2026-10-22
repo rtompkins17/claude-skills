@@ -70,15 +70,18 @@ In Claude Code, type `/catch-me-up`, optionally followed by one of these:
 | `now` (or `quick`, `short`, `tldr`) | Just the checklist and one line of asks, with only fast checks |
 | `waiting` | Only what is waiting on you |
 | `since <time>` | Only what changed, for example `since this morning` |
+| `project` (or `this project`, `repo`) | Every session and branch in the project you're in |
 | `on everything` (or `all`, `overall`) | Every session and project |
 
-They combine: `/catch-me-up now on everything` gives one line per project.
+They combine: `/catch-me-up now on everything` gives one line per project, and
+`/catch-me-up waiting project` gives only what this project needs from you.
 
 Or ask in your own words, in any Claude app: "catch me up", "quick status",
-"what's waiting on me?", "what changed since yesterday?" or "catch me up on
-everything". Claude loads the skill when the request matches.
+"what's waiting on me?", "what changed since yesterday?", "catch me up on this
+project" or "catch me up on everything". Claude loads the skill when the
+request matches.
 
-How much "everything" can see depends on where Claude runs. An app that lets
+How much "project" and "everything" can see depends on where Claude runs. An app that lets
 Claude list your other sessions gives the fullest picture. Otherwise it checks
 the projects and repositories it can reach, and says what it couldn't see.
 
