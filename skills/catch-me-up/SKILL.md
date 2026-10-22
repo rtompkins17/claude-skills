@@ -1,13 +1,20 @@
 ---
-name: status-update
-description: "Skimmable status updates: an emoji checklist and numbered 'Need from you' first, then specifics. Use when asked for status, what's left or next, what's needed, or to track sessions or branches."
+name: catch-me-up
+description: "Skimmable status: an emoji checklist and numbered 'Need from you', then specifics. Use for catch me up, status, what's left or next, what's needed. 'On everything' covers all sessions and projects."
 license: MIT
 ---
 
-# Status update
+# Catch me up
 
 The reader runs many threads at once and triages by skimming. Give them the
 state in a few seconds, then the detail below a divider for when they want it.
+
+## Scope: this thread, or everything
+
+- **Default:** the current session or thread.
+- **Everything:** when the request says "everything", "all", "overall" or
+  "every session" (for example `/catch-me-up on everything`), cover every
+  session, project and repository you can reach. See "Everything mode" below.
 
 ## Before you write: verify
 
@@ -97,6 +104,27 @@ After a `---` divider, include whichever of these apply and skip the rest:
 - Several threads: one bold line and checklist per thread, then one combined
   **Need from you** list in priority order (name the thread when it isn't
   obvious), then a single Specifics section.
+
+## Everything mode
+
+Gather before you write:
+
+- **Sessions:** if your tools can list or read other sessions (some apps give
+  Claude a sessions list or shared notes), check each one's latest state.
+- **Projects:** for each repository you can reach, check unmerged branches,
+  uncommitted changes, recent commits and open pull requests.
+- **Notes:** task lists, notes and memory across projects are leads to
+  confirm, not facts.
+- **Gaps:** name what you couldn't see in one line, such as "Couldn't see
+  sessions outside this app."
+
+Then write:
+
+- One bold line and checklist per thread or project, with the ones that need
+  the user first. Keep each to its three to five most important lines.
+- Put threads with nothing new on one line: `Quiet: <thread>, <thread>`.
+- One combined **Need from you** list, naming the thread in each ask.
+- One Specifics section. Add a Project column to the branch table.
 
 ## Example
 

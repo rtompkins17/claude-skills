@@ -1,7 +1,7 @@
-# status-update
+# catch-me-up
 
-An [Agent Skill](https://agentskills.io) that changes how Claude answers "what's
-the status?". You get a format you can read at a glance:
+An [Agent Skill](https://agentskills.io) that changes how Claude answers "catch
+me up" or "what's the status?". You get a format you can read at a glance:
 
 - **A skim block first.** One bold line per thread, then an emoji checklist in plain words:
   ✅ done, 🔄 in progress, ⏳ queued, ⛔ blocked or waiting on you.
@@ -9,6 +9,9 @@ the status?". You get a format you can read at a glance:
 - **Specifics, below a divider.** A table of unmerged branches with what each
   one needs, the list of what is still to build, and anything to copy and
   paste, in code blocks.
+
+It covers the current session by default. Add "on everything" and it covers
+every session, project and repository Claude can reach.
 
 It is useful when you run several agent sessions, branches or projects at once
 and need to see what needs you without reading paragraphs.
@@ -24,18 +27,18 @@ git clone https://github.com/rtompkins17/claude-skills.git
 ```
 
 ```bash
-mkdir -p ~/.claude/skills && cp -R claude-skills/skills/status-update ~/.claude/skills/
+mkdir -p ~/.claude/skills && cp -R claude-skills/skills/catch-me-up ~/.claude/skills/
 ```
 
 ### Claude Code, one project
 
-Put the folder at `.claude/skills/status-update/` in the repository and commit
+Put the folder at `.claude/skills/catch-me-up/` in the repository and commit
 it, so everyone working in that repo gets it.
 
 ### Inside a plugin
 
-Put the folder at `<your-plugin>/skills/status-update/`. The skill is then
-invoked as `/<your-plugin>:status-update`.
+Put the folder at `<your-plugin>/skills/catch-me-up/`. The skill is then
+invoked as `/<your-plugin>:catch-me-up`.
 
 ### Claude apps
 
@@ -43,10 +46,10 @@ Upload it from Claude on the web or in the desktop app:
 
 1. Turn on **Code execution and file creation** in Settings → Capabilities.
    Skills need it.
-2. Zip the folder so that `status-update/` is at the top of the zip:
+2. Zip the folder so that `catch-me-up/` is at the top of the zip:
 
    ```bash
-   cd claude-skills/skills && zip -r status-update.zip status-update
+   cd claude-skills/skills && zip -r catch-me-up.zip catch-me-up
    ```
 
 3. Go to **Customize → Skills**, click **+**, then **Create skill → Upload a
@@ -58,10 +61,19 @@ Menu names change from time to time. If these don't match, see
 
 ## Use
 
-Ask in your own words: "what's the status?", "what's left?", "what do you need
-from me?", "what still needs merging?", or "I can't keep track of my
-sessions". Claude loads the skill when the request matches. In Claude Code you
-can also run `/status-update` directly.
+In Claude Code:
+
+- `/catch-me-up` covers the current session.
+- `/catch-me-up on everything` covers every session and project. "All" and
+  "overall" work too.
+
+Or ask in your own words, in any Claude app: "catch me up", "what's the
+status?", "what's left?", "what do you need from me?" or "catch me up on
+everything". Claude loads the skill when the request matches.
+
+How much "everything" can see depends on where Claude runs. An app that lets
+Claude list your other sessions gives the fullest picture. Otherwise it checks
+the projects and repositories it can reach, and says what it couldn't see.
 
 ## Customize
 

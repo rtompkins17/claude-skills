@@ -5,7 +5,7 @@
 
 | Skill | What it does |
 | --- | --- |
-| [status-update](skills/status-update/) | Gives status updates in a skimmable format: an emoji checklist and a numbered "Need from you" list first, then the details |
+| [catch-me-up](skills/catch-me-up/) | Catches you up in a skimmable format: an emoji checklist and a numbered "Need from you" list first, then the details. Add "on everything" to cover every session and project |
 
 ## Install a skill
 
@@ -17,7 +17,7 @@ git clone https://github.com/rtompkins17/claude-skills.git
 ```
 
 ```bash
-mkdir -p ~/.claude/skills && cp -R claude-skills/skills/status-update ~/.claude/skills/
+mkdir -p ~/.claude/skills && cp -R claude-skills/skills/catch-me-up ~/.claude/skills/
 ```
 
 Each skill's README also covers installing it for a single project, inside a
