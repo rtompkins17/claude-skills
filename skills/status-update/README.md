@@ -39,10 +39,22 @@ invoked as `/<your-plugin>:status-update`.
 
 ### Claude apps
 
-Zip the `status-update` folder and upload it from the Skills section of
-Claude's settings (see
-[Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)).
-Custom skills need a plan and settings that support them.
+Upload it from Claude on the web or in the desktop app:
+
+1. Turn on **Code execution and file creation** in Settings → Capabilities.
+   Skills need it.
+2. Zip the folder so that `status-update/` is at the top of the zip:
+
+   ```bash
+   cd claude-skills/skills && zip -r status-update.zip status-update
+   ```
+
+3. Go to **Customize → Skills**, click **+**, then **Create skill → Upload a
+   skill**, and pick the zip.
+4. Turn the skill on with its toggle.
+
+Menu names change from time to time. If these don't match, see
+[Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude).
 
 ## Use
 

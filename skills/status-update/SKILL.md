@@ -1,6 +1,6 @@
 ---
 name: status-update
-description: "Formats status updates for fast skimming: a plain-language emoji checklist and a numbered 'Need from you' list first, then a Specifics section with unmerged branches and what is left to build. Use when the user asks for a status update or progress check, asks 'what's left', 'what's next', 'where are we', 'what do you need from me', or 'what needs to be merged, built or tested', or says they can't keep track of their sessions, threads or branches."
+description: "Skimmable status updates: an emoji checklist and numbered 'Need from you' first, then specifics. Use when asked for status, what's left or next, what's needed, or to track sessions or branches."
 license: MIT
 ---
 
