@@ -19,9 +19,46 @@ and need to see what needs you without reading paragraphs.
 
 ## Install
 
-### Claude Code, all your projects
+### As a plugin (recommended)
 
-Clone the repo and copy the folder into your personal skills directory:
+This repo is a plugin marketplace, so updates reach you through the plugin
+system.
+
+In Claude Code, run this in a session (Claude Code 2.1.275 or later):
+
+```
+/plugin install catch-me-up --marketplace rtompkins17/claude-skills
+```
+
+On older versions, add the marketplace first, then install:
+
+```
+/plugin marketplace add rtompkins17/claude-skills
+```
+
+```
+/plugin install catch-me-up@rtompkins17-claude-skills
+```
+
+In the Claude apps, go to **Customize → Plugins → Add → Add marketplace**,
+enter `rtompkins17/claude-skills`, then install **catch-me-up**.
+
+As a plugin, the command is `/catch-me-up:catch-me-up`. Asking in your own
+words works the same as always.
+
+### Other AI coding tools
+
+[skills.sh](https://skills.sh) installs it into Cursor, Codex and other tools
+that read Agent Skills:
+
+```bash
+npx skills add rtompkins17/claude-skills
+```
+
+### Copy the folder
+
+For Claude Code without the plugin system, clone the repo and copy the folder
+into your personal skills directory:
 
 ```bash
 git clone https://github.com/rtompkins17/claude-skills.git
@@ -31,19 +68,13 @@ git clone https://github.com/rtompkins17/claude-skills.git
 mkdir -p ~/.claude/skills && cp -R claude-skills/skills/catch-me-up ~/.claude/skills/
 ```
 
-### Claude Code, one project
+For one project only, put the folder at `.claude/skills/catch-me-up/` in that
+repository and commit it, so everyone working there gets it.
 
-Put the folder at `.claude/skills/catch-me-up/` in the repository and commit
-it, so everyone working in that repo gets it.
+### Upload to the Claude apps
 
-### Inside a plugin
-
-Put the folder at `<your-plugin>/skills/catch-me-up/`. The skill is then
-invoked as `/<your-plugin>:catch-me-up`.
-
-### Claude apps
-
-Upload it from Claude on the web or in the desktop app:
+To add just the skill, without the plugin, upload it from Claude on the web or
+in the desktop app:
 
 1. Turn on **Code execution and file creation** in Settings → Capabilities.
    Skills need it.

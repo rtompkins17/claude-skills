@@ -1,0 +1,17 @@
+{
+  "name": "rtompkins17-claude-skills",
+  "owner": {
+    "name": "rtompkins17",
+    "url": "https://github.com/rtompkins17"
+  },
+  "description": "Agent Skills for Claude by rtompkins17.",
+  "plugins": [
+    {
+      "name": "catch-me-up",
+      "source": "./",
+      "description": "Skimmable status updates: an emoji checklist and a numbered 'Need from you' list first, then the details.",
+      "category": "productivity",
+      "tags": ["status", "catch up", "progress", "standup"]
+    }
+  ]
+}

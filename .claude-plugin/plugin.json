@@ -1,0 +1,13 @@
+{
+  "name": "catch-me-up",
+  "version": "1.0.0",
+  "description": "Skimmable status updates: an emoji checklist and a numbered 'Need from you' list first, then the details. Modes: now, waiting, since, project and on everything.",
+  "author": {
+    "name": "rtompkins17",
+    "url": "https://github.com/rtompkins17"
+  },
+  "homepage": "https://github.com/rtompkins17/claude-skills",
+  "repository": "https://github.com/rtompkins17/claude-skills",
+  "license": "MIT",
+  "keywords": ["status", "catch up", "progress", "standup", "summary", "branches", "productivity"]
+}
