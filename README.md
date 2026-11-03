@@ -36,10 +36,10 @@ apps as a skill.
 (Claude Code 2.1.269 or later). Five cases check that the skill loads for
 status questions and that the reply keeps its shape. Three check that it
 stays out of unrelated questions. The status cases build a small example git
-repository first, so they need `--scaffold` and read access to git:
+repository first, so they need `--scaffold` and the shell, which runs inside the test sandbox:
 
 ```bash
-claude plugin eval . --scaffold --allow-tools "Bash(git *)" --ablation none --runs 2 --no-publish --max-cost-usd 5
+claude plugin eval . --scaffold --allow-tools Bash --ablation none --runs 2 --no-publish --max-cost-usd 5
 ```
 
 Every run is a real model call and counts against your plan or API bill.

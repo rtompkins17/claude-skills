@@ -2,5 +2,7 @@
 type: llm
 ---
 
-PASS if both are true: the checklist lines near the top of the reply use plain words and do not contain branch names such as feature/meal-planner or fix/photo-upload, and neither the meal planner nor the photo upload fix is marked done with ✅ (they are built but not merged).
-FAIL if a branch name appears in those checklist lines, or if the meal planner or the photo upload fix is marked ✅.
+Look only at the checklist lines: the lines that start with ✅, 🔄, ⏳ or ⛔. Ignore everything else in the reply, including any table or list below a --- divider.
+
+PASS if no checklist line contains a branch name (text such as feature/meal-planner or fix/photo-upload), and neither the meal planner nor the photo upload fix appears on a line that starts with ✅.
+FAIL if a checklist line contains a branch name, or if the meal planner or the photo upload fix appears on a line that starts with ✅.

@@ -1,6 +1,6 @@
 ---
 name: catch-me-up
-description: "Skimmable status: emoji checklist, then 'Need from you'. Use for catch me up, status, what's left or next, what's waiting on me, what changed. Modes: now, waiting, since, project, on everything."
+description: "Skimmable status update. Use for catch me up, status, where are we, what's left or next, what do you need from me, or can't keep track of branches. Modes: now, waiting, since, project, everything."
 license: MIT
 ---
 
@@ -19,7 +19,7 @@ words, give the full update for the current session.
 | Words | Mode |
 | --- | --- |
 | `now`, `quick`, `short`, `tldr` | **Now:** the checklist and one-line asks only |
-| `waiting` | **Waiting:** only what is waiting on the user |
+| `waiting`, "what do you need from me", "what's waiting on me" | **Waiting:** only what is waiting on the user |
 | `since <time>` | **Since:** only what changed since then |
 | `project`, `this project`, `repo` | **Project:** every session and branch in the current project |
 | `on everything`, `all`, `overall` | **Everything:** every session and project |
@@ -148,8 +148,8 @@ With everything mode, write one line per thread, then the quiet ones:
 
 ## Waiting mode
 
-- Give only the numbered **Need from you** list, most blocking first. Leave out
-  the checklist and the Specifics.
+- Start with the bold line `**Need from you**`, then the numbered list, most
+  blocking first. Leave out the checklist and the Specifics.
 - Across several threads, start each ask with the thread name in bold.
 - If an ask needs text to paste, put its code block under the list.
 - If nothing is waiting, write `Nothing is waiting on you.`
